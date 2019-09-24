@@ -18,7 +18,7 @@ try {
         warn "exception '$_' received\n";
     } else {
         warn "Unexpected exception '$_' received\n";
-        die $_;
+        die $_; #this die will exit
     }
 };
 if (defined $answer) {
@@ -30,7 +30,7 @@ sub code {
     my $mode = shift;
     print "code: $mode\n";
     if ($mode eq 'bad') {
-        die "bad code\n";
+        die "bad code\n"; # these die not exit co of catch
     } elsif ($mode eq 'ugly') {
         die 'Some other error';
     } else {
