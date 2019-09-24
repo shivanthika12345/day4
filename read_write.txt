@@ -1,0 +1,10 @@
+
+#read from this file
+my $file='input.txt';
+open(F,$file) || die {"Could not open $file!"};
+
+#write to a file
+
+open(my $fh, '>>',$file) or die "Could not open '$file'$!";
+
+print $fh "$field!\n";
